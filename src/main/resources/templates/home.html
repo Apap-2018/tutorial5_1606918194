@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<object th:include="fragments/fragment :: title" th:remove="tag"></object>
+		<object th:include="fragments/fragment :: css" th:remove="tag"></object>
+		<object th:include="fragments/fragment :: js" th:remove="tag"></object>
+	</head>
+
+	<body>
+		<nav th:replace="fragments/fragment :: navbar"></nav>
+	 
+	 	<div class="container-fluid">
+	  		<h2>Hello!</h2>
+	  		
+	  		<div class="row">
+	  			<div class="col-md-6">
+	  				<div class="card">
+	  					<div class="card-header">
+	      				Add Dealer
+	     				</div>
+	     				
+						<div class="card-body">
+				     		<p class="card-text">Feature to add dealer.</p>
+				     		<a class="btn btn-primary" th:href="@{/dealer/add}">Add</a>
+				     	</div>
+					</div>
+				</div>
+	  		</div> 
+	  		<br>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="card">
+						<div class="card-header">
+		      				Find Dealer By ID
+		     			</div>
+	
+						<form th:action="@{/dealer/view}" method="GET">
+							<div class="card-body">
+								<label for="dealerId">ID Dealer :</label>
+								<input type="text" name="dealerId" class="form-control" />
+								<br>
+								<button type="submit" class="btn btn-primary">Cari</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-6">
+	  				<div class="card">
+	  					<div class="card-header">
+	      				All Dealers
+	     				</div>
+	     				
+						<div class="card-body">
+				     		<p class="card-text">Feature to view all dealers.</p>
+				     		<a class="btn btn-primary" th:href="@{/dealer/view-all}">View</a>
+				     	</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

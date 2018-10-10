@@ -13,10 +13,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.apap.tutorial5.model.CarModel;
-import com.apap.tutorial5.model.DealerModel;
-import com.apap.tutorial5.service.CarService;
-import com.apap.tutorial5.service.DealerService;
+import com.apap.tutorial5.model.*;
+import com.apap.tutorial5.service.*;
 
 /**
  * 
@@ -102,6 +100,7 @@ public class CarController {
 			carService.deleteCar(car);
 		}
 		
+		model.addAttribute("title", "Deleted Car");
 		return "update";	
 	}
 	
@@ -131,20 +130,4 @@ public class CarController {
 		
 		return "update";
 	}
-}
-
-class CarList {   
-    List<CarModel> cars;    
-
-    public List<CarModel> getCars() {
-        return cars;
-    }
-
-    public void setPersons(List<CarModel> cars) {
-        this.cars= cars;
-    }
-    
-    public int getLength() {
-    	return cars.size();
-    }
 }

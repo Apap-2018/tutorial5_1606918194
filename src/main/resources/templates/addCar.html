@@ -17,8 +17,8 @@
 		<form th:action="@{/car/add/} + ${dealer.id}" th:object="${dealer}" method="POST">
 			<input type="hidden" th:field="*{id}" /> 
 			
-			<!--  hidden berguna untuk ngirim dealer idnya, karena car pasti berada dalam sebuah
-			dealer -->
+			<!--  hidden untuk ngirim dealer idnya, karena setiap car
+			berada dalam sebuah dealer -->
 			<table>
 				<thead>
 					<tr>
@@ -39,8 +39,8 @@
 						</td>
 						<td>
 							<input th:field="*{listCar[__${IterationStatus.index}__].type}" />
-							<!-- jadi __ ini utk dijalanin terlebih dahulu, kalau ga keluar tulisanny
-							bukan indexnya -->
+							<!-- jadi __ ini utk dijalanin terlebih dahulu, kalau gak,
+							keluar tulisannya bukan index -->
 						</td>
 						<td>
 							<input th:field="*{listCar[__${IterationStatus.index}__].price}" />

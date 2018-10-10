@@ -38,6 +38,7 @@ public class DealerController {
 	@RequestMapping(value = "/dealer/add", method = RequestMethod.POST)
 	private String addDealerSubmit(@ModelAttribute DealerModel dealer, Model model) {
 		dealerService.addDealer(dealer);
+		model.addAttribute("title", "Added Dealer");
 		return "add";
 	}
 	
@@ -78,6 +79,7 @@ public class DealerController {
 		updated.setAlamat(dealer.getAlamat());
 		updated.setNoTelp(dealer.getNoTelp());
 		dealerService.addDealer(updated);
+		model.addAttribute("title", "Updated Dealer");
 		
 		return "update";
 	}
